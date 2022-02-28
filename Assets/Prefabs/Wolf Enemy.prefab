@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7288766098682332642}
   - component: {fileID: 7288766098682332643}
   - component: {fileID: 7288766098682332640}
-  m_Layer: 8
-  m_Name: WolfEnemy
+  m_Layer: 10
+  m_Name: Wolf Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7288766098682332668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7288766099327332483}
@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7288766099327332483}
   - component: {fileID: 7288766099327332480}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1595017351
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -4216081227860012750, guid: dbd2fa224889f9e459955eeaeb8c00d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

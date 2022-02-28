@@ -1,19 +1,22 @@
 using Cinemachine;
 using UnityEngine;
 
-public class CinemachineExtentionsController : CinemachineExtension
+namespace Farm2D
 {
-    [SerializeField] private float _pixelPerUnit = 32f;
-
-    protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
+    public class CinemachineExtentionsController : CinemachineExtension
     {
-        if (stage == CinemachineCore.Stage.Body)
-        {
-            Vector3 finalPos = state.FinalPosition;
-            Vector3 roundedFinalPos = new Vector3(Round(finalPos.x), Round(finalPos.y), finalPos.z);
-            state.PositionCorrection += roundedFinalPos - finalPos;
-        }
-    }
+        [SerializeField] private float _pixelPerUnit = 32f;
 
-    private float Round(float value) => Mathf.Round(value * _pixelPerUnit) / _pixelPerUnit  ;
+        protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
+        {
+            if (stage == CinemachineCore.Stage.Body)
+            {
+                Vector3 finalPos = state.FinalPosition;
+                Vector3 roundedFinalPos = new Vector3(Round(finalPos.x), Round(finalPos.y), finalPos.z);
+                state.PositionCorrection += roundedFinalPos - finalPos;
+            }
+        }
+
+        private float Round(float value) => Mathf.Round(value * _pixelPerUnit) / _pixelPerUnit;
+    }
 }

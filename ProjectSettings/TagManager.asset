@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Pickup
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - 
   - Blocking
-  - 
-  - 
+  - Pickup
+  - Enemy
   - 
   - 
   - 
@@ -48,6 +49,12 @@ TagManager:
   - name: Front Tilemap
     uniqueID: 596727999
     locked: 0
+  - name: Objects
+    uniqueID: 1208522175
+    locked: 0
   - name: Characters
     uniqueID: 1595017351
+    locked: 0
+  - name: Top Tilemap
+    uniqueID: 373700005
     locked: 0

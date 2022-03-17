@@ -12,7 +12,7 @@ namespace Farm2D
 
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
-        private Vector2 movement;
+        private Vector2 _movement;
 
         private enum AnimationStates { Idle = 0, WalkRight = 1, WalkUp = 2, WalkLeft = 3, WalkDown = 4, }
 
@@ -28,16 +28,16 @@ namespace Farm2D
 
         private void Move()
         {
-            movement = new Vector2(Input.GetAxisRaw(HorizontalAxis), Input.GetAxisRaw(VerticalAxis));
-            _rigidbody2D.velocity = movement.normalized * _moveSpeed;
+            _movement = new Vector2(Input.GetAxisRaw(HorizontalAxis), Input.GetAxisRaw(VerticalAxis));
+            _rigidbody2D.velocity = _movement.normalized * _moveSpeed;
         }
 
         private void UpdateAnimationStates()
         {
-            if (movement.x > 0) SetAnimationState(AnimationStates.WalkRight);
-            else if (movement.x < 0) SetAnimationState(AnimationStates.WalkLeft);
-            else if (movement.y > 0) SetAnimationState(AnimationStates.WalkUp);
-            else if (movement.y < 0) SetAnimationState(AnimationStates.WalkDown);
+            if (_movement.x > 0) SetAnimationState(AnimationStates.WalkRight);
+            else if (_movement.x < 0) SetAnimationState(AnimationStates.WalkLeft);
+            else if (_movement.y > 0) SetAnimationState(AnimationStates.WalkUp);
+            else if (_movement.y < 0) SetAnimationState(AnimationStates.WalkDown);
             else SetAnimationState(AnimationStates.Idle);
         }
 

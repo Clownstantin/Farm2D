@@ -18,5 +18,7 @@ namespace Farm2D
         public int ItemQuantity => _quantity;
         public bool IsStackable => _isStackable;
         public ItemType Type => _itemType;
+
+        public void SetQuantity(int value) => _quantity = value;
     }
 }

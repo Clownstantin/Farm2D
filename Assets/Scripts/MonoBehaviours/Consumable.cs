@@ -4,8 +4,8 @@ namespace Farm2D
 {
     public class Consumable : MonoBehaviour
     {
-        [SerializeField] private Item _item;
+        [SerializeField] private Item _itemData;
 
-        public Item Item => _item;
+        public Item ItemData => _itemData;
     }
 }

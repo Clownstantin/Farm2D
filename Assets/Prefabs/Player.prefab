@@ -69,7 +69,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1595017351
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7152930139536384079, guid: 265239408ec8fe842861e18c49a33f8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -130,7 +130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19331c5807dbf747a955d831945fe9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 10
+  startingHP: 5
+  maxHealth: 10
+  hitPoints: {fileID: 11400000, guid: da574ecd2373b9f4ab585fb67a3ceca3, type: 2}
+  _healthBar: {fileID: 3740917466015310947, guid: 20828714fead90340a1e5a39c8522271, type: 3}
+  _inventory: {fileID: 1552650510905155390, guid: a24556b8b55ef3544a9d7f434bcbc76a, type: 3}
+  _gameUI: {fileID: 0}
 --- !u!114 &1698263776191527818
 MonoBehaviour:
   m_ObjectHideFlags: 0

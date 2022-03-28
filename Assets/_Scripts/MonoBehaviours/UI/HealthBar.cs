@@ -33,7 +33,7 @@ namespace Farm2D
             _hitPoints.OnHpChanged -= UpdateHealth;
         }
 
-        public void SetPlayer(Player player) => _player = player;
+        public void Init(Player player) => _player = player;
 
         private void UpdateHealth(float health)
         {

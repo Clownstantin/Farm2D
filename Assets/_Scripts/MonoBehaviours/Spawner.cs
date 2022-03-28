@@ -23,16 +23,13 @@ namespace Farm2D
 
         public Player SpawnPlayer() => _charPrefab is Player ? (Player)Instantiate(_charPrefab, transform) : null;
 
-        public void StopSpawn()
-        {
-            _tokenSource.Cancel();
-        }
+        public void StopSpawn() => _tokenSource.Cancel();
 
         private async UniTask SpawnEnemy(Character enemy, CancellationToken token)
         {
             var delay = TimeSpan.FromSeconds(_spawnDelay);
 
-            while (_spawnDelay > 0)
+            for (int i = 0; i < 3; i++)
             {
                 if (token.IsCancellationRequested)
                 {
@@ -41,10 +38,12 @@ namespace Farm2D
                     return;
                 }
 
-                var newEnemy = (Enemy)Instantiate(enemy, transform);
+                _ = _charPrefab is Enemy ? Instantiate(enemy, transform) : null;
 
                 await UniTask.Delay(delay, cancellationToken: token);
             }
+
+            StopSpawn();
         }
     }
 }

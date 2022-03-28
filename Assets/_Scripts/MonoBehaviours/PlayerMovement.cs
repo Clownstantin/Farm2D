@@ -14,8 +14,6 @@ namespace Farm2D
         private Animator _animator;
         private Vector2 _movement;
 
-        private enum AnimationStates { Idle = 0, WalkRight = 1, WalkUp = 2, WalkLeft = 3, WalkDown = 4, }
-
         private void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -34,17 +32,17 @@ namespace Farm2D
 
         private void UpdateAnimationStates()
         {
-            if (_movement.x > 0) SetAnimationState(AnimationStates.WalkRight);
-            else if (_movement.x < 0) SetAnimationState(AnimationStates.WalkLeft);
-            else if (_movement.y > 0) SetAnimationState(AnimationStates.WalkUp);
-            else if (_movement.y < 0) SetAnimationState(AnimationStates.WalkDown);
-            else SetAnimationState(AnimationStates.Idle);
+            if (Mathf.Approximately(_movement.x, 0) && Mathf.Approximately(_movement.y, 0))
+                SetBoolParam(false);
+            else
+                SetBoolParam(true);
+
+            _animator.SetFloat("xDir", _movement.x);
+            _animator.SetFloat("yDir", _movement.y);
         }
 
-        private void SetAnimationState(AnimationStates state)
-        {
-            int paramIndex = _animator.GetParameter(_animator.parameterCount - 1).nameHash;
-            _animator.SetInteger(paramIndex, (int)state);
-        }
+        private void SetBoolParam(bool boolean) => _animator.SetBool("isWalking", boolean);
     }
+
+    public enum AnimationState { Idle = 0, WalkRight = 1, WalkUp = 2, WalkLeft = 3, WalkDown = 4, }
 }

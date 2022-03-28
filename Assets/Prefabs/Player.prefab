@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 3895273227599262565}
   - component: {fileID: 8398868930618673957}
   - component: {fileID: 1698263776191527818}
+  - component: {fileID: 3125316653914778400}
   - component: {fileID: 3895273227599262566}
   - component: {fileID: 3895273227599262567}
   - component: {fileID: 3895273227599262560}
@@ -132,10 +133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHP: 5
   maxHealth: 10
-  hitPoints: {fileID: 11400000, guid: da574ecd2373b9f4ab585fb67a3ceca3, type: 2}
-  _healthBar: {fileID: 3740917466015310947, guid: 20828714fead90340a1e5a39c8522271, type: 3}
-  _inventory: {fileID: 1552650510905155390, guid: a24556b8b55ef3544a9d7f434bcbc76a, type: 3}
-  _gameUI: {fileID: 0}
+  _hitPoints: {fileID: 11400000, guid: da574ecd2373b9f4ab585fb67a3ceca3, type: 2}
+  _healthBarPrefab: {fileID: 3740917466015310947, guid: 20828714fead90340a1e5a39c8522271, type: 3}
+  _inventoryPrefab: {fileID: 1552650510905155390, guid: a24556b8b55ef3544a9d7f434bcbc76a, type: 3}
 --- !u!114 &1698263776191527818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +149,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 3
+--- !u!114 &3125316653914778400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3895273227599262564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366d61d1a2766a14b995f639839da031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammoPrefab: {fileID: 1041748300419221131, guid: fd9ead783fc032a468afa8560b7e6ce4, type: 3}
+  _poolSize: 10
+  _projectileVelocity: 1
 --- !u!95 &3895273227599262566
 Animator:
   serializedVersion: 3

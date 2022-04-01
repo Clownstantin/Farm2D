@@ -46,6 +46,8 @@ namespace Farm2D
 
             while (true)
             {
+                StartCoroutine(FlickerCharacter());
+
                 _hitPoints.SetHealth(_hitPoints.Health - damage);
 
                 if (_hitPoints.Health < float.Epsilon)

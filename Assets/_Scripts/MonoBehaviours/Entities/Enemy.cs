@@ -23,6 +23,8 @@ namespace Farm2D
 
             while (true)
             {
+                StartCoroutine(FlickerCharacter());
+
                 _currentHealth -= damage;
 
                 if (_currentHealth < float.Epsilon)
